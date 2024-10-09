@@ -8,8 +8,9 @@ export default {
         ubuntu: ["Ubuntu", "sans-serif"],
       },
       colors: {
-        bgColor: "#DACBF8",
-        textColor: "#5E17EB",
+        primary: "#DACBF8",
+        secondary: "#5E17EB",
+        text: "#261A3E",
       },
     },
   },
