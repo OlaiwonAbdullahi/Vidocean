@@ -7,7 +7,7 @@ import { FaXTwitter } from "react-icons/fa6";
 
 const Login = () => {
   return (
-    <div className="bg-[url('./assets/bg.svg')] w-full flex items-center justify-center mx-auto h-screen">
+    <div className="bg-[url('./assets/bg.svg')] bg-cover bg-center w-full flex items-center justify-center mx-auto h-screen">
       <div className="bg-secondary bg-opacity-10   bg-clip-padding backdrop-filter backdrop-blur-sm rounded-lg border border-secondary p-6 flex flex-col text-center items-center md:w-1/3 w-full gap-6">
         <div className="flex flex-col items-center gap-2">
           <img src={Logo} alt="Vidocean Logo" className="h-12 w-28" />
@@ -47,13 +47,13 @@ const Login = () => {
         </div>
 
         <div className=" flex gap-6">
-          <div className=" bg-transparent  border-2 border-secondary p-2 rounded-md">
+          <div className=" bg-transparent  border-2 border-secondary p-2 rounded-md cursor-pointer hover:bg-primary">
             <BsApple className="h-6 w-6" />
           </div>
-          <div className="bg-transparent  border-2 border-secondary p-2 rounded-md">
+          <div className="bg-transparent  border-2 border-secondary p-2 rounded-md cursor-pointer hover:bg-primary">
             <FcGoogle className="h-6 w-6" />
           </div>
-          <div className="bg-transparent  border-2 border-secondary p-2 rounded-md">
+          <div className="bg-transparent  border-2 border-secondary p-2 rounded-md cursor-pointer hover:bg-primary">
             <FaXTwitter className="h-6 w-6" />
           </div>
         </div>
