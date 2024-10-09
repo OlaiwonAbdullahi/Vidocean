@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 const Login = () => {
   return (
-    <div className="bg-[url('./assets/bg.svg')] bg-cover bg-center w-full flex items-center justify-center mx-auto h-screen">
+    <div className="bg-[url('./assets/bg.svg')]  bg-center w-full flex items-center justify-center mx-auto h-screen">
       <div className="bg-secondary bg-opacity-10   bg-clip-padding backdrop-filter backdrop-blur-sm rounded-lg border border-secondary p-6 flex flex-col text-center items-center md:w-1/3 w-full gap-6">
         <div className="flex flex-col items-center gap-2">
           <img src={Logo} alt="Vidocean Logo" className="h-16 w-28" />
