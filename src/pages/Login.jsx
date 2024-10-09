@@ -12,7 +12,7 @@ const Login = () => {
       <div className="bg-secondary bg-opacity-10   bg-clip-padding backdrop-filter backdrop-blur-sm rounded-lg border border-secondary p-6 flex flex-col text-center items-center md:w-1/3 w-full gap-6">
         <div className="flex flex-col items-center gap-2">
           <img src={Logo} alt="Vidocean Logo" className="h-12 w-28" />
-          <h2 className="text-2xl font-ubuntu font-medium">Welcome Back</h2>
+          <h2 className="text-2xl font-ubuntu font-medium">Welcome Back :) </h2>
           <p className="text-sm font-pop">
             Don&apos;t have an account?{" "}
             <Link to="/signin">
