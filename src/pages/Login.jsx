@@ -14,7 +14,7 @@ const Login = () => {
           <h2 className="text-2xl font-ubuntu font-medium">Welcome Back</h2>
           <p className="text-sm font-pop">
             Don&apos;t have an account?{" "}
-            <span className="text-secondary">Sign Up</span>
+            <span className="text-secondary cursor-pointer">Sign Up</span>
           </p>
         </div>
 
