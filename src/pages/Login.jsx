@@ -4,6 +4,7 @@ import Logo from "../assets/Vidocean2.png";
 import { FcGoogle } from "react-icons/fc";
 import { BsApple } from "react-icons/bs";
 import { FaXTwitter } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   return (
@@ -14,7 +15,9 @@ const Login = () => {
           <h2 className="text-2xl font-ubuntu font-medium">Welcome Back</h2>
           <p className="text-sm font-pop">
             Don&apos;t have an account?{" "}
-            <span className="text-secondary cursor-pointer">Sign Up</span>
+            <Link to="/signin">
+              <span className="text-secondary cursor-pointer">Sign Up</span>
+            </Link>
           </p>
         </div>
 
