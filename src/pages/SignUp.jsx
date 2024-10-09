@@ -1,17 +1,18 @@
 import { CiMail } from "react-icons/ci";
 import { MdOutlinePassword } from "react-icons/md";
-import Logo from "../assets/Vidocean2.png";
+import Logo from "../assets/Vidocean.png";
 import { FcGoogle } from "react-icons/fc";
 import { BsApple } from "react-icons/bs";
 import { FaXTwitter } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import { RxPerson } from "react-icons/rx";
 
 const Signup = () => {
   return (
     <div className="bg-[url('./assets/bg.svg')] bg-cover bg-center w-full flex items-center justify-center mx-auto h-screen">
       <div className="bg-secondary bg-opacity-10   bg-clip-padding backdrop-filter backdrop-blur-sm rounded-lg border border-secondary p-6 flex flex-col text-center items-center md:w-1/3 w-full gap-6">
         <div className="flex flex-col items-center gap-2">
-          <img src={Logo} alt="Vidocean Logo" className="h-12 w-28" />
+          <img src={Logo} alt="Vidocean Logo" className="h-16 w-28" />
           <h2 className="text-2xl font-ubuntu font-medium">
             {" "}
             Create an Account for Free (**){" "}
@@ -56,7 +57,7 @@ const Signup = () => {
 
         <div className="flex flex-col w-full gap-2">
           <div className="flex p-2 border border-text gap-2 rounded-md w-full items-center">
-            <CiMail className="w-6 h-6 text-gray-500" />
+            <RxPerson className="w-4 h-4 text-gray-500" />
             <input
               type="text"
               placeholder="Name"
@@ -64,7 +65,7 @@ const Signup = () => {
             />
           </div>
           <div className="flex p-2 border border-text gap-2 rounded-md w-full items-center">
-            <CiMail className="w-6 h-6 text-gray-500" />
+            <CiMail className="w-4 h-4 text-gray-500" />
             <input
               type="email"
               placeholder="Email Address"
@@ -73,7 +74,7 @@ const Signup = () => {
           </div>
           <div className=" flex gap-2">
             <div className="flex p-2 border border-text gap-2 rounded-md w-full items-center">
-              <MdOutlinePassword className="w-6 h-6 text-gray-500" />
+              <MdOutlinePassword className="w-4 h-4 text-gray-500" />
               <input
                 type="password"
                 placeholder="Password"
@@ -81,7 +82,7 @@ const Signup = () => {
               />
             </div>
             <div className="flex p-2 border border-text gap-2 rounded-md w-full items-center">
-              <MdOutlinePassword className="w-6 h-6 text-gray-500" />
+              <MdOutlinePassword className="w-4 h-4 text-gray-500" />
               <input
                 type="password"
                 placeholder="Confirm Password"
