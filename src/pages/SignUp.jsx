@@ -54,7 +54,15 @@ const Signup = () => {
           <hr className="flex-grow border-t border-text" />
         </div>
 
-        <div className="flex flex-col w-full gap-4">
+        <div className="flex flex-col w-full gap-2">
+          <div className="flex p-2 border border-text gap-2 rounded-md w-full items-center">
+            <CiMail className="w-6 h-6 text-gray-500" />
+            <input
+              type="text"
+              placeholder="Name"
+              className="bg-transparent placeholder:text-gray-500 placeholder:font-pop font-pop text-sm w-full outline-none"
+            />
+          </div>
           <div className="flex p-2 border border-text gap-2 rounded-md w-full items-center">
             <CiMail className="w-6 h-6 text-gray-500" />
             <input
@@ -63,14 +71,23 @@ const Signup = () => {
               className="bg-transparent placeholder:text-gray-500 placeholder:font-pop font-pop text-sm w-full outline-none"
             />
           </div>
-
-          <div className="flex p-2 border border-text gap-2 rounded-md w-full items-center">
-            <MdOutlinePassword className="w-6 h-6 text-gray-500" />
-            <input
-              type="password"
-              placeholder="Password"
-              className="bg-transparent placeholder:text-gray-500 placeholder:font-pop font-pop text-sm w-full outline-none"
-            />
+          <div className=" flex gap-2">
+            <div className="flex p-2 border border-text gap-2 rounded-md w-full items-center">
+              <MdOutlinePassword className="w-6 h-6 text-gray-500" />
+              <input
+                type="password"
+                placeholder="Password"
+                className="bg-transparent placeholder:text-gray-500 placeholder:font-pop font-pop text-sm w-full outline-none"
+              />
+            </div>
+            <div className="flex p-2 border border-text gap-2 rounded-md w-full items-center">
+              <MdOutlinePassword className="w-6 h-6 text-gray-500" />
+              <input
+                type="password"
+                placeholder="Confirm Password"
+                className="bg-transparent placeholder:text-gray-500 placeholder:font-pop font-pop text-sm w-full outline-none"
+              />
+            </div>
           </div>
           <div className="bg-secondary p-2 text-primary font-pop rounded-md cursor-pointer hover:bg-secondary-dark hover:text-white active:scale-95 transition-all duration-300 ease-in-out">
             Sign Up
