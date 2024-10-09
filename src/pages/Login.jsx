@@ -39,9 +39,11 @@ const Login = () => {
               className="bg-transparent placeholder:text-gray-500 placeholder:font-pop font-pop text-sm w-full outline-none"
             />
           </div>
-          <div className="bg-secondary p-2 text-primary font-pop rounded-md cursor-pointer hover:bg-secondary-dark hover:text-white active:scale-95 transition-all duration-300 ease-in-out">
-            LogIn
-          </div>
+          <Link to="/index">
+            <div className="bg-secondary p-2 text-primary font-pop rounded-md cursor-pointer hover:bg-secondary-dark hover:text-white active:scale-95 transition-all duration-300 ease-in-out">
+              LogIn
+            </div>
+          </Link>
         </div>
         <div className="w-full flex items-center gap-4">
           <hr className="flex-grow border-t border-text" />
