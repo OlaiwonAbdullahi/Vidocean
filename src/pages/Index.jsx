@@ -1,3 +1,4 @@
+import { RxDotFilled } from "react-icons/rx";
 import NavBar from "../components/NavBar";
 import SideBar from "../components/SideBar";
 const youtubeVideos = [
@@ -96,8 +97,16 @@ export default Index;
 function Videos({ video }) {
   return (
     <div className="">
-      <img src="" alt="" />
-      <h2></h2>
+      <img src={video.thumbnail} alt="" className=" h-30 w-72" />
+      <h2 className=" text-xl font-ubuntu font-medium">{video.title}</h2>
+      <span className=" font-medium"> {video.channel} </span>
+      <div className=" flex gap-2">
+        <span className="">{video.views} </span>
+        <span>
+          <RxDotFilled />
+        </span>
+        <span>{video.date}</span>
+      </div>
     </div>
   );
 }
