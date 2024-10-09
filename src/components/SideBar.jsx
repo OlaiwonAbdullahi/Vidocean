@@ -3,6 +3,7 @@ import { CgPlayList } from "react-icons/cg";
 import { CiClock2 } from "react-icons/ci";
 import { GrChannel } from "react-icons/gr";
 import { IoMusicalNotesOutline, IoVideocamOutline } from "react-icons/io5";
+import { PiGithubLogo } from "react-icons/pi";
 import { SlLike } from "react-icons/sl";
 import { TbSmartHome } from "react-icons/tb";
 
@@ -45,6 +46,13 @@ const SideBar = () => {
         <div className="flex p-1 gap-2">
           <BsDownload className="h-6 w-6" />
           <span className="text-sm font-ubuntu font-medium">Downloads</span>
+        </div>
+      </div>
+      <hr className=" border-t border-t-secondary" />
+      <div className="">
+        <div className="flex p-1 gap-2">
+          <PiGithubLogo className="h-6 w-6" />
+          <span className="text-sm font-ubuntu font-medium">GitHub Repo</span>
         </div>
       </div>
     </div>
