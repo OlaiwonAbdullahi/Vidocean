@@ -104,7 +104,7 @@ export default Index;
 
 function Videos({ video }) {
   return (
-    <div className=" border border-secondary flex flex-col rounded-xl gap-1 bg-white  p-2 w-full ">
+    <div className=" border border-secondary flex flex-col rounded-xl gap-1 bg-purple-50  p-2 w-full ">
       <img src={video.thumbnail} alt="" className=" h-48 w-full rounded-xl" />
       <div className=" flex justify-between">
         <h2 className=" text-xl font-ubuntu font-medium">{video.title}</h2>
