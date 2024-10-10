@@ -4,6 +4,7 @@ import { FiBell } from "react-icons/fi";
 import { IoIosSearch } from "react-icons/io";
 import { PiGithubLogo } from "react-icons/pi";
 import { useState } from "react";
+import { LiaTimesSolid } from "react-icons/lia";
 const MobileNavBar = () => {
   const [openSearch, setOpenSearch] = useState(false);
   return (
@@ -27,14 +28,16 @@ const MobileNavBar = () => {
           </button>
         </div>
       </div>
-      {openSearch && <Search />}
+      {openSearch && (
+        <Search openSearch={openSearch} setOpenSearch={setOpenSearch} />
+      )}
     </div>
   );
 };
 
 export default MobileNavBar;
 
-function Search() {
+function Search({ setOpenSearch, openSearch }) {
   return (
     <div className="flex gap-2 border border-secondary h-10 items-center rounded-full px-4 justify-between">
       <input
@@ -42,9 +45,14 @@ function Search() {
         className="placeholder:text-gray-400 text-text focus:outline-none bg-transparent w-64 font-ubuntu"
         placeholder="Search"
       />
-      <button>
-        <IoIosSearch className="h-5 w-5 text-secondary hover:text-primary transition-colors duration-200" />
-      </button>
+      <div className=" flex gap-3">
+        <button>
+          <IoIosSearch className="h-5 w-5 text-secondary hover:text-primary transition-colors duration-200" />
+        </button>
+        <button onClick={() => setOpenSearch(!openSearch)}>
+          <LiaTimesSolid className="h-5 w-5 text-secondary hover:text-primary transition-colors duration-200" />
+        </button>
+      </div>
     </div>
   );
 }
