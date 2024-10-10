@@ -4,6 +4,8 @@ import SideBar from "../components/SideBar";
 import { TbDotsVertical } from "react-icons/tb";
 import MobileNavBar from "../components/MobileNavBar";
 import MobileSideBar from "../components/MobileSideBar";
+import { fetchFromAPI } from "../utils/fetchFormAPI";
+import { useEffect, useState } from "react";
 const youtubeVideos = [
   {
     title: "ReactJS Crash Course 2024",
@@ -78,6 +80,10 @@ const youtubeVideos = [
 ];
 
 const Index = () => {
+  const [selectedCategory, setSelectedCategory] = useState("New");
+  useEffect(() => {
+    fetchFromAPI(`search?part=snippet&q={selectedCategory}`);
+  }, [selectedCategory]);
   return (
     <div className="bg-white">
       <NavBar />
@@ -87,7 +93,7 @@ const Index = () => {
           <SideBar />
         </div>
         <div className=" flex justify-center items-center mx-auto">
-          {" "}
+          <div className=" text-secondary">Videos</div>
           <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 mx-4">
             {youtubeVideos.map((video) => (
               <Videos key={video.title} video={video} />
