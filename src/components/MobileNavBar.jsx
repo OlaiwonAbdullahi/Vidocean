@@ -5,8 +5,8 @@ import { IoIosSearch } from "react-icons/io";
 import { PiGithubLogo } from "react-icons/pi";
 const MobileNavBar = () => {
   return (
-    <>
-      <div className="  md:hidden flex justify-between p-2  top-0 sticky border-b border-b-primary bg-white z-10">
+    <div className=" md:hidden flex flex-col p-2  top-0 sticky border-b border-b-primary bg-white z-10">
+      <div className=" flex justify-between ">
         <div className="flex-shrink-0">
           <img src={Logo} alt="Vidocean Logo" className="h-14 w-24 my-3" />
         </div>
@@ -26,7 +26,7 @@ const MobileNavBar = () => {
         </div>
       </div>
       <Search />
-    </>
+    </div>
   );
 };
 
@@ -34,7 +34,7 @@ export default MobileNavBar;
 
 function Search() {
   return (
-    <div className="flex gap-2 border border-secondary h-10 items-center rounded-full px-4">
+    <div className="flex gap-2 border border-secondary h-10 items-center rounded-full px-4 justify-between">
       <input
         type="text"
         className="placeholder:text-gray-400 text-text focus:outline-none bg-transparent w-64 font-ubuntu"
