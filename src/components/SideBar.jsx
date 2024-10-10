@@ -1,11 +1,14 @@
 import { BsDownload } from "react-icons/bs";
-import { CgPlayList } from "react-icons/cg";
-import { CiClock2 } from "react-icons/ci";
-import { GrChannel } from "react-icons/gr";
-import { IoMusicalNotesOutline, IoVideocamOutline } from "react-icons/io5";
+import { CgGym, CgPlayList } from "react-icons/cg";
+import { IoIosLaptop } from "react-icons/io";
+import {
+  IoBookOutline,
+  IoMusicalNotesOutline,
+  IoVideocamOutline,
+} from "react-icons/io5";
 import { PiGithubLogo } from "react-icons/pi";
-import { SlLike } from "react-icons/sl";
 import { TbSmartHome } from "react-icons/tb";
+import { GiClothes } from "react-icons/gi";
 
 const SideBar = () => {
   return (
@@ -31,28 +34,44 @@ const SideBar = () => {
 
       <div className="">
         <div className="flex items-center p-2 gap-1.5 hover:bg-gray-100 rounded-lg cursor-pointer transition-all duration-200">
-          <GrChannel className="h-5 w-5 text-secondary" />
-          <span className="text-sm font-ubuntu font-medium">Your Channel</span>
+          <IoBookOutline className="h-5 w-5 text-secondary" />
+          <span className="text-sm font-ubuntu font-medium">Education</span>
         </div>
 
         <div className="flex items-center p-2 gap-1.5 hover:bg-gray-100 rounded-lg cursor-pointer transition-all duration-200">
           <IoVideocamOutline className="h-5 w-5 text-secondary" />
-          <span className="text-sm font-ubuntu font-medium">Your Videos</span>
+          <span className="text-sm font-ubuntu font-medium">Entertainment</span>
         </div>
 
         <div className="flex items-center p-2 gap-1.5 hover:bg-gray-100 rounded-lg cursor-pointer transition-all duration-200">
-          <SlLike className="h-5 w-5 text-secondary" />
-          <span className="text-sm font-ubuntu font-medium">Liked Videos</span>
+          <IoMusicalNotesOutline className="h-5 w-5 text-secondary" />
+          <span className="text-sm font-ubuntu font-medium">
+            {" "}
+            Music & Dance
+          </span>
         </div>
 
         <div className="flex items-center p-2 gap-1.5 hover:bg-gray-100 rounded-lg cursor-pointer transition-all duration-200">
-          <CiClock2 className="h-5 w-5 text-secondary" />
-          <span className="text-sm font-ubuntu font-medium">Watch Later</span>
+          <IoIosLaptop className="h-5 w-5 text-secondary" />
+          <span className="text-sm font-ubuntu font-medium">
+            {" "}
+            Tech Reviews{" "}
+          </span>
         </div>
 
         <div className="flex items-center p-2 gap-1.5 hover:bg-gray-100 rounded-lg cursor-pointer transition-all duration-200">
-          <BsDownload className="h-5 w-5 text-secondary" />
-          <span className="text-sm font-ubuntu font-medium">Downloads</span>
+          <CgGym className="h-5 w-5 text-secondary" />
+          <span className="text-sm font-ubuntu font-medium">
+            {" "}
+            Health & Fitness
+          </span>
+        </div>
+        <div className="flex items-center p-2 gap-1.5 hover:bg-gray-100 rounded-lg cursor-pointer transition-all duration-200">
+          <GiClothes className="h-5 w-5 text-secondary" />
+          <span className="text-sm font-ubuntu font-medium">
+            {" "}
+            Beauty & Fashion
+          </span>
         </div>
       </div>
 
