@@ -23,9 +23,11 @@ const MobileNavBar = () => {
           <button>
             <IoMoonOutline className="w-6 h-5 text-secondary hover:text-primary transition-colors duration-200" />
           </button>
-          <button>
-            <PiGithubLogo className="w-6 h-5 text-secondary hover:text-primary transition-colors duration-200" />
-          </button>
+          <a href="https://github.com/OlaiwonAbdullahi/Vidocean">
+            <button>
+              <PiGithubLogo className="w-6 h-5 text-secondary hover:text-primary transition-colors duration-200" />
+            </button>
+          </a>
         </div>
       </div>
       {openSearch && (
