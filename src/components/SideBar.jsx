@@ -9,7 +9,7 @@ import { TbSmartHome } from "react-icons/tb";
 
 const SideBar = () => {
   return (
-    <div className="flex flex-col bg-white w-44 h-screen justify-around shadow-lg">
+    <div className="md:flex flex-col bg-white w-44 h-screen justify-around shadow-lg hidden">
       <div className="">
         <div className="flex items-center p-2 gap-1.5 bg-gray-100 rounded-lg cursor-pointer transition-all duration-200">
           <TbSmartHome className="h-5 w-5 text-secondary" />

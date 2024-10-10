@@ -6,7 +6,7 @@ import Logo from "../assets/Vidocean.png";
 
 const NavBar = () => {
   return (
-    <div className="flex justify-center items-center  top-0 sticky border-b border-b-primary bg-white z-10">
+    <div className="hidden md:flex justify-center items-center  top-0 sticky border-b border-b-primary bg-white z-10">
       <div className="flex justify-between items-center w-4/5">
         {/* Logo */}
         <div className="flex-shrink-0">

@@ -2,6 +2,8 @@ import { RxDotFilled } from "react-icons/rx";
 import NavBar from "../components/NavBar";
 import SideBar from "../components/SideBar";
 import { TbDotsVertical } from "react-icons/tb";
+import MobileNavBar from "../components/MobileNavBar";
+import MobileSideBar from "../components/MobileSideBar";
 const youtubeVideos = [
   {
     title: "ReactJS Crash Course 2024",
@@ -79,6 +81,7 @@ const Index = () => {
   return (
     <div className="bg-white">
       <NavBar />
+      <MobileNavBar />
       <div className=" flex">
         <div className="">
           <SideBar />
@@ -92,6 +95,7 @@ const Index = () => {
           </div>
         </div>
       </div>
+      <MobileSideBar />
     </div>
   );
 };
@@ -100,8 +104,8 @@ export default Index;
 
 function Videos({ video }) {
   return (
-    <div className=" border border-secondary flex flex-col rounded-xl gap-1 bg-white  p-3 w-full ">
-      <img src={video.thumbnail} alt="" className=" h-30 w-72 rounded-xl" />
+    <div className=" border border-secondary flex flex-col rounded-xl gap-1 bg-white  p-2 w-full ">
+      <img src={video.thumbnail} alt="" className=" h-48 w-full rounded-xl" />
       <div className=" flex justify-between">
         <h2 className=" text-xl font-ubuntu font-medium">{video.title}</h2>
         <TbDotsVertical className=" mt-1" />
