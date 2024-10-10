@@ -58,10 +58,12 @@ const SideBar = () => {
 
       <hr className="border-t border-gray-300" />
       <div className="">
-        <div className="flex items-center p-2 gap-1.5 hover:bg-gray-100 rounded-lg cursor-pointer transition-all duration-200">
-          <PiGithubLogo className="h-5 w-5 text-secondary" />
-          <span className="text-sm font-ubuntu font-medium">GitHub Repo</span>
-        </div>
+        <a href="https://github.com/OlaiwonAbdullahi/Vidocean">
+          <div className="flex items-center p-2 gap-1.5 hover:bg-gray-100 rounded-lg cursor-pointer transition-all duration-200">
+            <PiGithubLogo className="h-5 w-5 text-secondary" />
+            <span className="text-sm font-ubuntu font-medium">GitHub Repo</span>
+          </div>
+        </a>
         <div className="flex items-center p-2 gap-1.5 hover:bg-gray-100 rounded-lg cursor-pointer transition-all duration-200">
           <span className="text-sm font-ubuntu font-medium whitespace-nowrap">
             By Abdullahi Olaiwon
