@@ -13,52 +13,34 @@ const SideBar = ({ selectedCategory, setSelectedCategory }) => {
   return (
     <div className="md:flex flex-col fixed bg-white w-44 h-screen justify-around shadow-lg hidden">
       <div className="">
-        <button
-          className="flex items-center p-2 gap-1.5 bg-gray-100 rounded-lg cursor-pointer transition-all duration-200"
-          onClick={() => setSelectedCategory("Home")}
-        >
+        <button className="flex items-center p-2 gap-1.5 bg-gray-100 rounded-lg cursor-pointer transition-all duration-200">
           <TbSmartHome className="h-5 w-5 text-secondary" />
           <span className="text-sm font-ubuntu font-medium">Home</span>
         </button>
 
-        <button
-          className="flex items-center p-2 gap-1.5 hover:bg-gray-100 rounded-lg cursor-pointer transition-all duration-200"
-          onClick={() => setSelectedCategory("Playlist")}
-        >
+        <button className="flex items-center p-2 gap-1.5 hover:bg-gray-100 rounded-lg cursor-pointer transition-all duration-200">
           <CgPlayList className="h-5 w-5 text-secondary" />
           <span className="text-sm font-ubuntu font-medium">Playlist</span>
         </button>
 
-        <button
-          className="flex items-center p-2 gap-1.5 hover:bg-gray-100 rounded-lg cursor-pointer transition-all duration-200"
-          onClick={() => setSelectedCategory("Music")}
-        >
+        <button className="flex items-center p-2 gap-1.5 hover:bg-gray-100 rounded-lg cursor-pointer transition-all duration-200">
           <IoMusicalNotesOutline className="h-5 w-5 text-secondary" />
           <span className="text-sm font-ubuntu font-medium">Music</span>
         </button>
       </div>
 
       <div className="">
-        <button
-          className="flex items-center p-2 gap-1.5 hover:bg-gray-100 rounded-lg cursor-pointer transition-all duration-200"
-          onClick={() => setSelectedCategory("Education")}
-        >
+        <button className="flex items-center p-2 gap-1.5 hover:bg-gray-100 rounded-lg cursor-pointer transition-all duration-200">
           <IoBookOutline className="h-5 w-5 text-secondary" />
           <span className="text-sm font-ubuntu font-medium">Education</span>
         </button>
 
-        <button
-          className="flex items-center p-2 gap-1.5 hover:bg-gray-100 rounded-lg cursor-pointer transition-all duration-200"
-          onClick={() => setSelectedCategory("Entertainment")}
-        >
+        <button className="flex items-center p-2 gap-1.5 hover:bg-gray-100 rounded-lg cursor-pointer transition-all duration-200">
           <IoVideocamOutline className="h-5 w-5 text-secondary" />
           <span className="text-sm font-ubuntu font-medium">Entertainment</span>
         </button>
 
-        <button
-          className="flex items-center p-2 gap-1.5 hover:bg-gray-100 rounded-lg cursor-pointer transition-all duration-200"
-          onClick={() => setSelectedCategory("Music & Dance")}
-        >
+        <button className="flex items-center p-2 gap-1.5 hover:bg-gray-100 rounded-lg cursor-pointer transition-all duration-200">
           <IoMusicalNotesOutline className="h-5 w-5 text-secondary" />
           <span className="text-sm font-ubuntu font-medium">
             {" "}
@@ -66,10 +48,7 @@ const SideBar = ({ selectedCategory, setSelectedCategory }) => {
           </span>
         </button>
 
-        <button
-          className="flex items-center p-2 gap-1.5 hover:bg-gray-100 rounded-lg cursor-pointer transition-all duration-200"
-          onClick={() => setSelectedCategory("Tech Reviews")}
-        >
+        <button className="flex items-center p-2 gap-1.5 hover:bg-gray-100 rounded-lg cursor-pointer transition-all duration-200">
           <IoIosLaptop className="h-5 w-5 text-secondary" />
           <span className="text-sm font-ubuntu font-medium">
             {" "}
@@ -77,20 +56,14 @@ const SideBar = ({ selectedCategory, setSelectedCategory }) => {
           </span>
         </button>
 
-        <button
-          className="flex items-center p-2 gap-1.5 hover:bg-gray-100 rounded-lg cursor-pointer transition-all duration-200"
-          onClick={() => setSelectedCategory("Health & Fitness")}
-        >
+        <button className="flex items-center p-2 gap-1.5 hover:bg-gray-100 rounded-lg cursor-pointer transition-all duration-200">
           <CgGym className="h-5 w-5 text-secondary" />
           <span className="text-sm font-ubuntu font-medium">
             {" "}
             Health & Fitness
           </span>
         </button>
-        <button
-          className="flex items-center p-2 gap-1.5 hover:bg-gray-100 rounded-lg cursor-pointer transition-all duration-200"
-          onClick={() => setSelectedCategory("Beauty & Fashion")}
-        >
+        <button className="flex items-center p-2 gap-1.5 hover:bg-gray-100 rounded-lg cursor-pointer transition-all duration-200">
           <GiClothes className="h-5 w-5 text-secondary" />
           <span className="text-sm font-ubuntu font-medium">
             {" "}
