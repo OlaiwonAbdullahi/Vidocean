@@ -4,8 +4,8 @@ import SideBar from "../components/SideBar";
 import { TbDotsVertical } from "react-icons/tb";
 import MobileNavBar from "../components/MobileNavBar";
 import MobileSideBar from "../components/MobileSideBar";
-import { fetchFromAPI } from "../utils/fetchFormAPI";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { useAuth } from "../context/AuthProvider";
 const youtubeVideos = [
   {
     title: "ReactJS Crash Course 2024",
@@ -81,6 +81,9 @@ const youtubeVideos = [
 
 const Index = () => {
   const [openSideBar, setOpenSideBar] = useState(false);
+  const { loading, data } = useAuth();
+  console.log(loading);
+  console.log(data);
   return (
     <div className="bg-white">
       <NavBar setOpenSideBar={setOpenSideBar} openSideBar={openSideBar} />
