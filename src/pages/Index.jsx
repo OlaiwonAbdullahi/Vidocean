@@ -80,20 +80,31 @@ const youtubeVideos = [
 ];
 
 const Index = () => {
+  const [openSideBar, setOpenSideBar] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("New");
+  const [video, setVideos] = useState([]);
   useEffect(() => {
-    fetchFromAPI(`search?part=snippet&q={selectedCategory}`);
+    fetchFromAPI(`search?part=snippet&q={selectedCategory}`).then((data) =>
+      setVideos(data.items)
+    );
   }, [selectedCategory]);
   return (
     <div className="bg-white">
-      <NavBar />
+      <NavBar setOpenSideBar={setOpenSideBar} openSideBar={openSideBar} />
       <MobileNavBar />
       <div className=" flex">
         <div className="">
-          <SideBar />
+          {openSideBar && (
+            <SideBar
+              selectedCategory={selectedCategory}
+              setSelectedCategory={setSelectedCategory}
+            />
+          )}
         </div>
-        <div className=" flex justify-center items-center mx-auto">
-          <div className=" text-secondary">Videos</div>
+        <div className=" flex flex-col justify-center items-center mx-auto">
+          <div className=" text-secondary self-start text-3xl  font-ubuntu ml-4 mt-2">
+            Videos
+          </div>
           <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 mx-4">
             {youtubeVideos.map((video) => (
               <Videos key={video.title} video={video} />

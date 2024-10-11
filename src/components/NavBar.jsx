@@ -3,10 +3,19 @@ import { IoIosSearch } from "react-icons/io";
 import { FiBell } from "react-icons/fi";
 import { FaCircle } from "react-icons/fa6";
 import Logo from "../assets/Vidocean.png";
+import { CiGrid41 } from "react-icons/ci";
+import { LiaTimesSolid } from "react-icons/lia";
 
-const NavBar = () => {
+const NavBar = ({ openSideBar, setOpenSideBar }) => {
   return (
     <div className="hidden md:flex justify-center items-center  top-0 sticky border-b border-b-primary bg-white z-10">
+      <button className="mr-28" onClick={() => setOpenSideBar(!openSideBar)}>
+        {!openSideBar ? (
+          <CiGrid41 className=" h-7 w-7 text-secondary hover:text-purple-500 transition-colors duration-200 border-none" />
+        ) : (
+          <LiaTimesSolid className=" h-7 w-7 text-secondary hover:text-purple-500 transition-colors duration-200" />
+        )}
+      </button>
       <div className="flex justify-between items-center w-4/5">
         {/* Logo */}
         <div className="flex-shrink-0">
