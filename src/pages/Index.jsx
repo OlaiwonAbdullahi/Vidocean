@@ -23,7 +23,7 @@ const Index = () => {
         <div className=" flex flex-col justify-center items-center mx-auto">
           {loading && <Loading />}
           <div className=" text-secondary self-start text-3xl  font-ubuntu ml-4 mt-2">
-            Videos
+            {loading ? "Loading Videos" : "All Videos"}
           </div>
           <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 mx-4">
             {data.map((item) => (
