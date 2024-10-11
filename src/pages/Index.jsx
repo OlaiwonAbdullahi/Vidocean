@@ -6,6 +6,7 @@ import MobileNavBar from "../components/MobileNavBar";
 import MobileSideBar from "../components/MobileSideBar";
 import { useState } from "react";
 import { useAuth } from "../context/AuthProvider";
+import { Link } from "react-router-dom";
 
 const Index = () => {
   const [openSideBar, setOpenSideBar] = useState(false);
@@ -39,38 +40,50 @@ export default Index;
 function Videos({ video }) {
   console.log(video);
   return (
-    <div className=" border border-secondary flex flex-col rounded-xl gap-1 bg-purple-50  p-2 w-full ">
-      <img
-        src={video.thumbnails[0].url}
-        alt=""
-        className=" h-48 w-full rounded-xl"
-      />
-      <div className=" flex justify-between">
+    <Link to={`/video/${video?.videoId}`} className="block group">
+      <div className="border border-gray-200 rounded-xl overflow-hidden bg-white shadow-md transition-transform duration-300 transform hover:scale-105 hover:shadow-lg">
+        {/* Video Thumbnail */}
         <img
-          src={video.author.avatar[0].url}
-          alt=""
-          className=" h-7 w-7 mt-1 mr-2 rounded-full"
+          src={video.thumbnails[0].url}
+          alt={video.title}
+          className="h-48 w-full object-cover"
         />
-        <h2 className=" text-lg font-ubuntu font-medium">{video.title}</h2>
-        <TbDotsVertical className=" mt-1 h-8 w-8" />
-      </div>
 
-      <span className=" font-medium font-pop text-sm">
-        {" "}
-        {video.author.title}{" "}
-      </span>
-      <div className=" flex gap-2 text-xs">
-        <span className=" font-pop">
-          {video?.stats?.views
-            ? video.stats.views.toLocaleString()
-            : "No views available"}{" "}
-          views{" "}
-        </span>
-        <span>
-          <RxDotFilled className=" mt-1" />
-        </span>
-        <span className=" font-pop">{video.publishedTimeText}</span>
+        {/* Video Details */}
+        <div className="p-4">
+          {/* Video Title */}
+          <h2 className="text-lg font-ubuntu font-semibold text-gray-900 truncate group-hover:text-indigo-600 transition-colors duration-300">
+            {video.title}
+          </h2>
+
+          {/* Video Author */}
+          <div className="flex items-center mt-2 space-x-2">
+            <img
+              src={video.author.avatar[0].url}
+              alt={video.author.title}
+              className="h-8 w-8 rounded-full"
+            />
+            <span className="text-sm font-pop font-medium text-gray-700">
+              {video.author.title}
+            </span>
+          </div>
+
+          {/* Video Stats */}
+          <div className="flex items-center text-xs text-gray-500 mt-2">
+            <span className="font-pop">
+              {video?.stats?.views
+                ? video.stats.views.toLocaleString()
+                : "No views available"}{" "}
+              views
+            </span>
+            <RxDotFilled className="mx-1 text-gray-400" />
+            <span className="font-pop">{video.publishedTimeText}</span>
+          </div>
+        </div>
+
+        {/* Vertical dots icon for additional options */}
+        <TbDotsVertical className="absolute top-2 right-2 h-6 w-6 text-gray-400 hover:text-gray-600 transition-colors duration-300" />
       </div>
-    </div>
+    </Link>
   );
 }

@@ -21,7 +21,7 @@ const App = () => {
             <Route path="/signin" element={<SignUp />} />
             <Route path="/index" element={<Index />} />
             <Route path="/search:searchQuery" element={<Search />} />
-            <Route path="/playing:id" element={<PlayingVideo />} />
+            <Route path="/video/:id" element={<PlayingVideo />} />
             {/* Redirect to the login page if no match is found */}
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
