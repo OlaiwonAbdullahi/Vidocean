@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { fetchData } from "../utils/fetchFormAPI";
 
 export const AuthContext = createContext();
@@ -12,16 +12,18 @@ export default function AuthProvider({ children }) {
     fetchAllData(value);
   }, [value]);
 
-  const fetchAllData = async (query) => {
+  const fetchAllData = (query) => {
     setLoading(true);
-    try {
-      const res = await fetchData(`search/?q=${query}`);
-      setData(res);
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    } finally {
-      setLoading(false);
-    }
+
+    fetchData(`search/?q=${query}`)
+      .then(({ contents }) => {
+        setData(contents);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+        setLoading(false); // Ensure loading is stopped in case of an error
+      });
   };
 
   return (
@@ -30,3 +32,5 @@ export default function AuthProvider({ children }) {
     </AuthContext.Provider>
   );
 }
+
+export const useAuth = () => useContext(AuthContext);
