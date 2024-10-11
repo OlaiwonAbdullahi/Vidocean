@@ -7,6 +7,7 @@ import MobileSideBar from "../components/MobileSideBar";
 import { useState } from "react";
 import { useAuth } from "../context/AuthProvider";
 import { Link } from "react-router-dom";
+import Loading from "../components/Loading";
 
 const Index = () => {
   const [openSideBar, setOpenSideBar] = useState(false);
@@ -20,6 +21,7 @@ const Index = () => {
       <div className=" flex">
         <div className="">{openSideBar && <SideBar />}</div>
         <div className=" flex flex-col justify-center items-center mx-auto">
+          {loading && <Loading />}
           <div className=" text-secondary self-start text-3xl  font-ubuntu ml-4 mt-2">
             Videos
           </div>
