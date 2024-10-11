@@ -7,14 +7,19 @@ const options = {
     maxResults: "50",
   },
   headers: {
-    "x-rapidapi-key": "b8ef490beemshc78108332381208p1cc891jsn167f1fd3a95e", // This will fetch from .env
+    "x-rapidapi-key": import.meta.env.VITE_RAPIDAPI_KEY, // Correctly use the environment variable
     "x-rapidapi-host": "youtube-v31.p.rapidapi.com",
   },
 };
 
 export const fetchFromAPI = async (url) => {
-  // Check if the key is loading
-  const { data } = await axios.get(`${BASE_URL}/${url}`, options);
-
-  return data;
+  try {
+    const { data } = await axios.get(`${BASE_URL}/${url}`, options);
+    return data;
+  } catch (error) {
+    console.error(
+      "Error fetching from API",
+      error.response ? error.response.data : error.message
+    );
+  }
 };

@@ -1,10 +1,9 @@
-import { RxDotFilled } from "react-icons/rx";
 import NavBar from "../components/NavBar";
 import SideBar from "../components/SideBar";
 import { TbDotsVertical } from "react-icons/tb";
 import MobileNavBar from "../components/MobileNavBar";
 import MobileSideBar from "../components/MobileSideBar";
-import { fetchFromAPI } from "../utils/fetchFromAPI";
+import { fetchFromAPI } from "../utils/fetchFormAPI";
 import { useEffect, useState } from "react";
 
 // Dummy data for fallback purposes
@@ -21,16 +20,25 @@ const youtubeVideos = [
 
 const Index = () => {
   const [openSideBar, setOpenSideBar] = useState(false);
-  const [selectedCategory, setSelectedCategory] = useState("New");
+  const [selectedCategory, setSelectedCategory] = useState("");
   const [videos, setVideos] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setLoading(true); // Set loading to true when fetching starts
-    fetchFromAPI(`search?part=snippet&q=${selectedCategory}`).then((data) => {
-      setVideos(data.items || []); // Handle case when no items are returned
-      setLoading(false); // Set loading to false when data is fetched
-    });
+    setLoading(true);
+    fetchFromAPI(`search?part=snippet&q=${selectedCategory}`)
+      .then((data) => {
+        if (data && data.items) {
+          setVideos(data.items);
+        } else {
+          setVideos([]);
+        }
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error fetching videos:", error);
+        setLoading(false);
+      });
   }, [selectedCategory]);
 
   return (
