@@ -52,7 +52,7 @@ const PlayingVideo = () => {
             {video && (
               <div>
                 <div>
-                  <h2 className="text-lg font-ubuntu font-semibold text-gray-900 truncate group-hover:text-indigo-600 transition-colors duration-300">
+                  <h2 className="text-lg mt-52 md:mt-0 font-ubuntu font-semibold text-gray-900 truncate group-hover:text-indigo-600 transition-colors duration-300">
                     {video?.title || "No title available"}
                   </h2>
                 </div>
