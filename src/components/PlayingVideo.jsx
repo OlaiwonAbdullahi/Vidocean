@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { fetchData } from "../utils/fetchFormAPI";
 import ReactPlayer from "react-player";
 import { RxDotFilled } from "react-icons/rx";
+import { SlLike } from "react-icons/sl";
 
 const PlayingVideo = () => {
   const [video, setVideo] = useState();
@@ -33,34 +34,53 @@ const PlayingVideo = () => {
             />
           </div>
 
-          <div className="p-4">
-            {/* Video Title */}
-            <h2 className="text-lg font-ubuntu font-semibold text-gray-900 truncate group-hover:text-indigo-600 transition-colors duration-300">
-              {video.title}
-            </h2>
-
-            {/* Video Author */}
-            <div className="flex items-center mt-2 space-x-2">
-              <img
-                src={video.author.avatar[0].url}
-                alt={video.author.title}
-                className="h-8 w-8 rounded-full"
-              />
-              <span className="text-sm font-pop font-medium text-gray-700">
-                {video.author.title}
-              </span>
+          <div className="">
+            <div className="">
+              <h2 className="text-lg font-ubuntu font-semibold text-gray-900 truncate group-hover:text-indigo-600 transition-colors duration-300">
+                {video.title}
+              </h2>
             </div>
-
-            {/* Video Stats */}
-            <div className="flex items-center text-xs text-gray-500 mt-2">
-              <span className="font-pop">
-                {video?.stats?.views
-                  ? video.stats.views.toLocaleString()
-                  : "No views available"}{" "}
-                views
-              </span>
-              <RxDotFilled className="mx-1 text-gray-400" />
-              <span className="font-pop">{video.publishedTimeText}</span>
+            <div className=" flex flex-row justify-between">
+              <div className=" flex gap-2">
+                <div className="flex items-center mt-2 space-x-2">
+                  <img
+                    src={video.author.avatar[0].url}
+                    alt={video.author.title}
+                    className="h-8 w-8 rounded-full"
+                  />
+                  <span className="text-sm font-pop font-medium text-gray-700">
+                    {video.author.title}
+                  </span>
+                </div>
+                <div className="">
+                  <button className="bg-secondary text-primary p-1 rounded-full font-pop">
+                    Subscribe
+                  </button>
+                </div>
+              </div>
+              <div className="  flex">
+                <span>
+                  <span className="font-pop">
+                    <SlLike className="text-sm" />
+                    {video?.stats?.likes
+                      ? video.stats.likes.toLocaleString()
+                      : "No like available"}{" "}
+                    Likes
+                  </span>
+                  <span className="font-pop">
+                    {video?.stats?.views
+                      ? video.stats.views.toLocaleString()
+                      : "No views available"}{" "}
+                    views
+                  </span>
+                </span>
+              </div>
+            </div>
+            <div className=" p-4 text-text bg-primary">
+              {video?.description}
+            </div>
+            <div className="">
+              {video.stats.comments} <p>Comments</p>
             </div>
           </div>
         </div>
