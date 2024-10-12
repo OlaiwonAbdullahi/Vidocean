@@ -29,15 +29,16 @@ const PlayingVideo = () => {
       setRelatedVideos(res);
     });
   };
+
   return (
-    <div className="">
+    <div>
       <NavBar />
-      <div className="flex justify-center flex-col  h-[calc(100%-56px)] mt-2">
-        <div className="w-full max-w-[1500px] flex flex-col lg:flex-row">
+      <div className="flex justify-center items-center h-[calc(100%-56px)] mt-2">
+        <div className="w-full max-w-[1500px] flex flex-col lg:flex-row items-center justify-center">
           <div className="flex flex-col lg:w-[calc(100%-350px)] xl:w-[100%-400px] px-4 py-3 lg:py-6">
-            <div className="h-[200px] md:h-[400px] ml-[-16px] mr-[-16px] lg:ml-0 lg:mr-0 ">
+            <div className="h-[200px] md:h-[400px] ml-[-16px] mr-[-16px] lg:ml-0 lg:mr-0">
               <ReactPlayer
-                className=" rounded-xl"
+                className="rounded-xl"
                 url={`https://www.youtube.com/watch?v=${id}`}
                 height="400px"
                 width="100%"
@@ -77,13 +78,13 @@ const PlayingVideo = () => {
                   </div>
                   <div className="flex gap-2">
                     <span className="font-pop flex gap-2 text-sm">
-                      <SlLike className=" h-5 w-5" />
+                      <SlLike className="h-5 w-5" />
                       {video?.stats?.likes
                         ? video.stats.likes.toLocaleString()
                         : "No likes available"}{" "}
                       Likes
                     </span>
-                    <span className="font-pop  flex gap-2 text-sm">
+                    <span className="font-pop flex gap-2 text-sm">
                       <IoEyeOutline className="h-5 w-5" />
                       {video?.stats?.views
                         ? video.stats.views.toLocaleString()
@@ -96,7 +97,7 @@ const PlayingVideo = () => {
                 <div className="p-4 text-text bg-primary font-pop text-sm rounded-lg">
                   {video?.description || "No description available"}
                 </div>
-                <div className=" flex text-text font-semibold gap-2 font-ubuntu">
+                <div className="flex text-text font-semibold gap-2 font-ubuntu">
                   {video?.stats?.comments || "No comments available"}{" "}
                   <p>Comments</p>
                 </div>
