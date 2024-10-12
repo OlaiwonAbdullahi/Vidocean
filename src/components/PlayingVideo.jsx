@@ -5,9 +5,11 @@ import ReactPlayer from "react-player";
 import { SlLike } from "react-icons/sl";
 import { IoEyeOutline } from "react-icons/io5";
 import NavBar from "../components/NavBar";
+import SugestedVideos from "./SugestedVideos";
 
 const PlayingVideo = () => {
-  const [video, setVideo] = useState(null); // Initialize with null
+  const [video, setVideo] = useState(null);
+  const [relatedVideos, setRelatedVideos] = useState();
   const { id } = useParams();
 
   useEffect(() => {
@@ -21,6 +23,12 @@ const PlayingVideo = () => {
       });
   }, [id]);
 
+  const fetchRelatedVideos = () => {
+    fetchData(`video/details/?id=${id}`).then((res) => {
+      console.log(res);
+      setVideo(res);
+    });
+  };
   return (
     <div className="">
       <NavBar />
@@ -95,6 +103,9 @@ const PlayingVideo = () => {
               </div>
             )}
           </div>
+        </div>
+        <div className="">
+          <SugestedVideos />
         </div>
       </div>
     </div>
