@@ -11,7 +11,7 @@ import { GiClothes } from "react-icons/gi";
 
 const SideBar = ({ selectedCategory, setSelectedCategory }) => {
   return (
-    <div className="md:flex flex-col fixed bg-white w-44 h-screen justify-around shadow-lg hidden">
+    <div className="md:flex flex-col fixed bg-white w-44 h-screen justify-around shadow-lg hidden z-20">
       <div className="">
         <button className="flex items-center p-2 gap-1.5 bg-gray-100 rounded-lg cursor-pointer transition-all duration-200">
           <TbSmartHome className="h-5 w-5 text-secondary" />
