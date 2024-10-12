@@ -24,9 +24,9 @@ const PlayingVideo = () => {
   }, [id]);
 
   const fetchRelatedVideos = () => {
-    fetchData(`video/details/?id=${id}`).then((res) => {
+    fetchData(`video/related-contents/?id=${id}`).then((res) => {
       console.log(res);
-      setVideo(res);
+      setRelatedVideos(res);
     });
   };
   return (
