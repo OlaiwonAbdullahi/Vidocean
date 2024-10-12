@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchData } from "../utils/fetchFormAPI";
 import ReactPlayer from "react-player";
+import { RxDotFilled } from "react-icons/rx";
 
 const PlayingVideo = () => {
   const [video, setVideo] = useState();
@@ -30,6 +31,37 @@ const PlayingVideo = () => {
               style={{ backgroundColor: "#000000" }}
               playing={true}
             />
+          </div>
+
+          <div className="p-4">
+            {/* Video Title */}
+            <h2 className="text-lg font-ubuntu font-semibold text-gray-900 truncate group-hover:text-indigo-600 transition-colors duration-300">
+              {video.title}
+            </h2>
+
+            {/* Video Author */}
+            <div className="flex items-center mt-2 space-x-2">
+              <img
+                src={video.author.avatar[0].url}
+                alt={video.author.title}
+                className="h-8 w-8 rounded-full"
+              />
+              <span className="text-sm font-pop font-medium text-gray-700">
+                {video.author.title}
+              </span>
+            </div>
+
+            {/* Video Stats */}
+            <div className="flex items-center text-xs text-gray-500 mt-2">
+              <span className="font-pop">
+                {video?.stats?.views
+                  ? video.stats.views.toLocaleString()
+                  : "No views available"}{" "}
+                views
+              </span>
+              <RxDotFilled className="mx-1 text-gray-400" />
+              <span className="font-pop">{video.publishedTimeText}</span>
+            </div>
           </div>
         </div>
       </div>
