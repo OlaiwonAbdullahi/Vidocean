@@ -5,6 +5,7 @@ import ReactPlayer from "react-player";
 import { SlLike } from "react-icons/sl";
 import { IoEyeOutline } from "react-icons/io5";
 import NavBar from "../components/NavBar";
+import MobileNavBar from "../components/MobileNavBar";
 import SugestedVideos from "./SugestedVideos";
 
 const PlayingVideo = () => {
@@ -33,6 +34,7 @@ const PlayingVideo = () => {
   return (
     <div>
       <NavBar />
+       <MobileNavBar/>
       <div className="flex justify-center items-center h-[calc(100%-56px)] mt-2">
         <div className="w-full max-w-[1500px] flex flex-col lg:flex-row items-center justify-center">
           <div className="flex flex-col lg:w-[calc(100%-350px)] xl:w-[100%-400px] px-4 py-3 lg:py-6">
