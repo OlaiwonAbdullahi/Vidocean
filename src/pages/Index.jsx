@@ -8,6 +8,7 @@ import { useState } from "react";
 import { useAuth } from "../context/AuthProvider";
 import { Link } from "react-router-dom";
 import Loading from "../components/Loading";
+import MobileOverFlow from "../components/MobileOverFlow";
 
 const Index = () => {
   const [openSideBar, setOpenSideBar] = useState(false);
@@ -18,6 +19,7 @@ const Index = () => {
     <div className="bg-white">
       <NavBar setOpenSideBar={setOpenSideBar} openSideBar={openSideBar} />
       <MobileNavBar />
+      <MobileOverFlow />
       <div className=" flex">
         <div className="">{openSideBar && <SideBar />}</div>
         <div className=" flex flex-col justify-center items-center mx-auto">
