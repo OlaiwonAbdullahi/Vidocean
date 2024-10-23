@@ -13,24 +13,27 @@ import MobileOverFlow from "../components/MobileOverFlow";
 const Index = () => {
   const [openSideBar, setOpenSideBar] = useState(false);
   const { loading, data } = useAuth();
- // console.log(loading);
- // console.log(data);
+
   return (
     <div className="bg-white">
       <NavBar setOpenSideBar={setOpenSideBar} openSideBar={openSideBar} />
       <MobileNavBar />
       <MobileOverFlow />
-      <div className=" flex">
+      <div className="flex">
         <div className="">{openSideBar && <SideBar />}</div>
-        <div className=" flex flex-col justify-center items-center mx-auto">
+        <div className="flex flex-col justify-center items-center mx-auto">
           {loading && <Loading />}
-          <div className=" text-secondary self-start text-3xl  font-ubuntu ml-4 mt-2">
+          <div className="text-secondary self-start text-3xl font-ubuntu ml-4 mt-2">
             {loading ? "Loading Videos" : "All Videos"}
           </div>
-          <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 mx-4">
-            {data.map((item) => (
-              <Videos key={item.id} video={item?.video} />
-            ))}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 mx-4">
+            {data && data.length > 0 ? (
+              data.map((item) => (
+                <Videos key={item.id} video={item?.video} />
+              ))
+            ) : (
+              <div>No videos available</div>
+            )}
           </div>
         </div>
       </div>
@@ -42,33 +45,44 @@ const Index = () => {
 export default Index;
 
 function Videos({ video }) {
-  //console.log(video);
+  if (!video) {
+    return <div>No video data available</div>;
+  }
+
   return (
     <Link to={`/video/${video?.videoId}`} className="block group">
       <div className="border border-gray-200 rounded-xl overflow-hidden bg-white shadow-md transition-transform duration-300 transform hover:scale-105 hover:shadow-lg">
         {/* Video Thumbnail */}
-        <img
-          src={video.thumbnails[0].url}
-          alt={video.title}
-          className="h-48 w-full object-cover"
-        />
+        {video?.thumbnails?.[0]?.url ? (
+          <img
+            src={video.thumbnails[0].url}
+            alt={video?.title || "Thumbnail"}
+            className="h-48 w-full object-cover"
+          />
+        ) : (
+          <div className="h-48 w-full bg-gray-200 flex items-center justify-center">
+            Thumbnail not available
+          </div>
+        )}
 
         {/* Video Details */}
         <div className="p-4">
           {/* Video Title */}
           <h2 className="text-lg font-ubuntu font-semibold text-gray-900 truncate group-hover:text-indigo-600 transition-colors duration-300">
-            {video.title}
+            {video?.title || "Title not available"}
           </h2>
 
           {/* Video Author */}
           <div className="flex items-center mt-2 space-x-2">
-            <img
-              src={video.author.avatar[0].url}
-              alt={video.author.title}
-              className="h-8 w-8 rounded-full"
-            />
+            {video?.author?.avatar?.[0]?.url && (
+              <img
+                src={video.author.avatar[0].url}
+                alt={video?.author?.title || "Author"}
+                className="h-8 w-8 rounded-full"
+              />
+            )}
             <span className="text-sm font-pop font-medium text-gray-700">
-              {video.author.title}
+              {video?.author?.title || "Author not available"}
             </span>
           </div>
 
@@ -81,7 +95,9 @@ function Videos({ video }) {
               views
             </span>
             <RxDotFilled className="mx-1 text-gray-400" />
-            <span className="font-pop">{video.publishedTimeText}</span>
+            <span className="font-pop">
+              {video?.publishedTimeText || "Time not available"}
+            </span>
           </div>
         </div>
 
