@@ -16,7 +16,7 @@ const PlayingVideo = () => {
   useEffect(() => {
     fetchData(`video/details/?id=${id}`)
       .then((res) => {
-        console.log(res);
+        //console.log(res);
         setVideo(res);
       })
       .catch((err) => {
@@ -26,7 +26,7 @@ const PlayingVideo = () => {
 
   const fetchRelatedVideos = () => {
     fetchData(`video/related-contents/?id=${id}`).then((res) => {
-      console.log(res);
+      //console.log(res);
       setRelatedVideos(res);
     });
   };
