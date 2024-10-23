@@ -13,8 +13,8 @@ import MobileOverFlow from "../components/MobileOverFlow";
 const Index = () => {
   const [openSideBar, setOpenSideBar] = useState(false);
   const { loading, data } = useAuth();
-  console.log(loading);
-  console.log(data);
+ // console.log(loading);
+ // console.log(data);
   return (
     <div className="bg-white">
       <NavBar setOpenSideBar={setOpenSideBar} openSideBar={openSideBar} />
@@ -42,7 +42,7 @@ const Index = () => {
 export default Index;
 
 function Videos({ video }) {
-  console.log(video);
+  //console.log(video);
   return (
     <Link to={`/video/${video?.videoId}`} className="block group">
       <div className="border border-gray-200 rounded-xl overflow-hidden bg-white shadow-md transition-transform duration-300 transform hover:scale-105 hover:shadow-lg">
